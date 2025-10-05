@@ -34,6 +34,6 @@ Previous to this internship, the skeleton was developed with compliant joints an
 @Rolling shows four frames from a video of the robot rolling. The left side is pulled in which causes the center of mass to shift towards the right, causing it to roll by $90degree$.
 
 #figure(
-  image("images/withOrigami4FrameAnnotatedWithBG.png"),
+  image("images/withOrigami4FrameAnnotatedWithBG (Large).png"),
   caption: [A rolling sequence towards the right with the origami cap.],
 ) <Rolling>
