@@ -10,7 +10,7 @@
   set page(
     paper: "a1",
     flipped: false,
-    margin: (top: 0cm, left: 0cm, right: 0cm),
+    margin: (top: 0cm, x: 0cm, bottom: 2cm),
   )
   box(fill: rgb("#d73648"), width: 100%, height: 11cm)[
     #grid(
@@ -30,12 +30,12 @@
       image("GMMR.png", width: 7cm),
     )
   ]
-  set text(lang: "GB", size: 25pt)
+  set text(lang: "GB", size: 27pt)
   set image(height: 10cm)
   show heading: it => [
     #set align(center)
     #set text(rgb("#b62137"))
-    #stack(spacing: 20pt, it.body, line(length: 100%))
+    #stack(spacing: 20pt, it.body, line(length: if it.level == 1 { 100% } else if it.level == 2 { 70% } else { 50% }))
   ]
   show figure: set text(25pt)
   // place(line(start: (50%, 0%), length: 95%, angle: 90deg, stroke: 4pt + rgb("#b62137")))

@@ -28,6 +28,27 @@ Previous to this internship, the skeleton was developed with compliant joints an
   caption: [An exploded view of the gearbox design.],
 ) <Exploded>
 
+= Gear ratios
+The worm gear has 43 teeth, producing a $43:1$ reduction. For every 43 rotations of the motor, the central shaft rotates once:
+
+$ theta_"driver" = frac(theta_"motor", 43) $
+
+The mutilated gears consist of an inner gear (5 teeth) and an outer gear (10 teeth). The ratio is therefore $10:5 = 2:1$. For every full rotation of the driver, the driven spool rotates $180degree$ (half a turn):
+$ theta_"spool" = frac(theta_"driver", 2) $
+
+Combining these two stages gives:
+$ theta_"spool" = frac(theta_"motor", 43 times 2) = frac(theta_"motor", 86) $
+
+Given the spool radius $r = 8 "mm"$, the linear displacement of the wire for a motor rotation of $theta_"motor"$ radians is:
+$ L = r thin theta_"spool" = r (theta_"motor" dot frac(T_"driver", T_"driven" dot T_"worm")) $
+
+For the half-rotation of the driven gear ($180degree$ or $pi$ radians):
+$L = 8 "mm" times pi = 25.1 "mm"$
+
+This means each engagement of the mutilated gear produces approximately 25 mm of wire travel.
+
+Developing an equation for the wire retraction length based on the spool configuration enabled the design of the appropriate retraction length for the compliant skeleton.
+
 
 = Rolling
 
@@ -37,3 +58,7 @@ Previous to this internship, the skeleton was developed with compliant joints an
   image("images/withOrigami4FrameAnnotatedWithBG (Large).png"),
   caption: [A rolling sequence towards the right with the origami cap.],
 ) <Rolling>
+
+= Future work
+
+The next goal of this project is to allow the spools to be driven out of order and rotated to an angle where they are held in place while the driving gear selects another spool. This can allow more intelligent locomotion where a corner can be contracted before going over an obstacle.
