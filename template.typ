@@ -30,8 +30,8 @@
       image("GMMR.png", width: 7cm),
     )
   ]
-  set text(lang: "GB", size: 27pt)
-  set image(height: 10cm)
+  set text(lang: "GB", size: 26pt)
+  set image(height: 9.7cm, fit: "contain")
   show heading: it => [
     #set align(center)
     #set text(rgb("#b62137"))

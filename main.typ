@@ -9,7 +9,7 @@
 )
 
 = Introduction
-This project developed a gearbox for a novel origami based robot which can leverage the same contraction mechanism for shape change and locomotion. The robot consists of two parts; a circular flexible skeleton and an origami cap on either side. By pulling in the corners of the skeleton, a shape change can occur. By contracting these corners in sequence, the robot is able to achieve locomotion. The transformation and locomotion is done with a single motor, creating an under-actuated design.
+This project developed a gearbox for a novel origami-based robot which can leverage the same contraction mechanism for shape change and locomotion. The robot consists of two parts; a circular flexible skeleton and an origami cap on either side. By pulling in the corners of the skeleton, a shape change can occur. By contracting these corners in sequence, the robot is able to achieve locomotion. The transformation and locomotion is achieved with a single motor, creating an under-actuated design.
 
 #figure(
   image("images/noOrigamiOverhead.png"),
@@ -17,11 +17,16 @@ This project developed a gearbox for a novel origami based robot which can lever
 ) <Overhead>
 
 = Project history
-Previous to this internship, the skeleton was developed with compliant joints and the origami cap was designed and manufactured. Different gearbox designs had been developed to contract the skeleton, however, the gearboxes that could contract the corners in sequence could not support multiple rotations.
+Prior to this project, the skeleton was developed with compliant joints and the origami cap was designed and manufactured. Different gearbox designs had been developed to contract the skeleton, however, the gearboxes that could contract the corners in sequence could not support multiple rotations.
+
+#figure(
+  image("images/compliant.png"),
+  caption: [The geometry of the compliant joints which form the skeleton.],
+) <Overhead>
 
 = The gearbox
 
-@Exploded shows the gearbox developed in this internship. A worm gear driven by the motor is attached to a vertical shaft which rotates a mutilated gear. This gear is surrounded by 4 spools which it intermittently rotates. When the spools rotate they pull in wires connected to the corners of the skeleton in sequence, inducing locomotion.
+@Exploded shows the gearbox developed in this project. A worm gear driven by the motor is attached to a vertical shaft which rotates a mutilated gear. This gear is surrounded by 4 spools which it intermittently rotates. When the spools rotate they pull in wires connected to the corners of the skeleton in sequence, inducing locomotion.
 
 #figure(
   image("images/OrigamiRobotExploded.png"),
@@ -42,8 +47,9 @@ $ theta_"spool" = frac(theta_"motor", 43 times 2) = frac(theta_"motor", 86) $
 Given the spool radius $r = 8 "mm"$, the linear displacement of the wire for a motor rotation of $theta_"motor"$ radians is:
 $ L = r thin theta_"spool" = r (theta_"motor" dot frac(T_"driver", T_"driven" dot T_"worm")) $
 
-For the half-rotation of the driven gear ($180degree$ or $pi$ radians):
-$L = 8 "mm" times pi = 25.1 "mm"$
+For the half-rotation ($180degree$ or $pi$ radians) of the driven gear (8mm radius):
+
+$ L = 8 "mm" times pi = 25.1 "mm" $
 
 This means each engagement of the mutilated gear produces approximately 25 mm of wire travel.
 
@@ -52,7 +58,7 @@ Developing an equation for the wire retraction length based on the spool configu
 
 = Rolling
 
-@Rolling shows four frames from a video of the robot rolling. The left side is pulled in which causes the center of mass to shift towards the right, causing it to roll by $90degree$.
+@Rolling shows four frames from a video of the robot rolling. The left side is pulled in which causes the center of mass to shift towards the right, causing it to roll by $90degree$. For the paper, an IMU was attached to the gearbox to plot motor rotation against the rotation angle of the robot.
 
 #figure(
   image("images/withOrigami4FrameAnnotatedWithBG (Large).png"),
